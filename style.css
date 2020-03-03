@@ -1,0 +1,9 @@
+:root {
+    --main-bg-color: sandybrown;
+    --main-txt-color: black;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-txt-color);
+}
