@@ -9,7 +9,7 @@ class App {
     }
 
     Listen() {
-        const port = 8080; // default port to listen
+        const port = 80; // default port to listen
         this.server = express();
         this.server.listen( port, () => {
             // tslint:disable-next-line:no-console
