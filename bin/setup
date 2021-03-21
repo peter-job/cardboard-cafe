@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+# sudo apt-get install -y nodejs
+
+# pip3 install awscli
+
+ssh pi@cardboard.cafe "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys" && scp ~/.ssh/id_rsa.pub pi@cardboard.cafe:~/.ssh/authorized_keys
+
+sudo apt-get install certbot
+sudo certbot certonly --standalone --preferred-challenges http -d cardboard.cafe --cert-path .
