@@ -15,14 +15,14 @@ const httpsServer = https.createServer(credentials, app);
  * Start Express server.
  */
 
-// httpServer.listen(EnvironmentConfig.HTTP_PORT, () => {
-//     console.log(
-//         "  App is running at http://0.0.0.0:%d in %s mode",
-//         EnvironmentConfig.HTTP_PORT,
-//         app.get("env")
-//     );
-//     console.log("  Press CTRL-C to stop\n");
-// });
+httpServer.listen(EnvironmentConfig.HTTP_PORT, () => {
+    console.log(
+        "  App is running at http://0.0.0.0:%d in %s mode",
+        EnvironmentConfig.HTTP_PORT,
+        app.get("env")
+    );
+    console.log("  Press CTRL-C to stop\n");
+});
 
 httpsServer.listen(EnvironmentConfig.HTTPS_PORT, () => {
     console.log(

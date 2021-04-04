@@ -1,7 +1,11 @@
+/* Variables */
+
 :root {
     --main-bg-color: sandybrown;
     --main-txt-color: #004d00;
 }
+
+/* Main */
 
 body {
     background-color: var(--main-bg-color);

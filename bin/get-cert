@@ -14,7 +14,7 @@ fi
 USER=$(whoami)
 if [[ $USER != "root" ]]; then 
     echo $USER
-    echo "This script must be run as root!" 
+    echo "This script must be run as root!"
     exit 1
 fi 
 

@@ -2,3 +2,4 @@ node_modules/
 cardboard-ddns
 dist/
 *.log
+favicons/
