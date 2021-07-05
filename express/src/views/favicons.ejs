@@ -8,10 +8,13 @@
         <p>
             These are favicons from around the world :)
         </p>
-        <div id="favicon-container">
-            <% data.icons.forEach(icon => ( %>
-                <img src="img/favicons/<%= icon.name %>.<%= icon.ext %>" width="24"></img>
-             <% ); %>
+        <div id="gallery-container" style="display: flex; flex-wrap: wrap;">
+            <%data.icons.forEach((icon, i) => {%>
+                <div class="favicon-container" tabindex="0">
+                    <img src="img/favicons/<%=icon.name%><%=icon.ext%>" width="36" height="36" alt="<%=icon.name%><%=icon.ext%>"></img>
+                    <span class="favicon-description"><%=icon.name%><%=icon.ext%></span>
+                </div>
+             <%});%>
         </div>
     </body>
 </html>
