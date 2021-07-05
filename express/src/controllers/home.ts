@@ -11,7 +11,22 @@ export const index = (req: Request, res: Response) => {
 };
 
 export const favicons = (req: Request, res: Response) => {
+    ;
     res.render("favicons", {
-        title: "Favicon Explorer"
+        title: "Favicon Explorer",
+        data: {
+                icons: getFavicons()
+        }
     });
 };
+
+const getFavicons = () => {
+    const favicons_dir = './src/public/img/favicons';
+    const path = require('path');
+    const fs = require('fs');
+    const favicons = fs.readdirSync(favicons_dir).map(file => ({ ext: path.extname(file), name: path.parse(file).name }));
+    favicons.forEach(file => {
+        console.log(file);
+    });
+    return favicons;
+}

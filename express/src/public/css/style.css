@@ -1,7 +1,7 @@
 /* Variables */
 
 :root {
-    --main-bg-color: sandybrown;
+    --main-bg-color: seashell;
     --main-txt-color: #004d00;
 }
 
@@ -11,3 +11,29 @@ body {
     background-color: var(--main-bg-color);
     color: var(--main-txt-color);
 }
+
+.favicon-container {
+    transition:transform 0.5s ease;
+}
+
+.favicon-container:focus {
+    z-index: 1;
+    -webkit-transform:scale(2); /* or some other value */
+    transform:scale(2);
+    border: 2px sienna;
+    margin: -2px;
+    border-style: outset;
+    background-color: seashell;
+    outline: none;
+}
+
+/* .favicon-description {
+    display: none;
+}
+
+.favicon-container:focus .favicon-description {
+    display: inline-block;
+    background-color: pink;
+    font-size: 0.4em;
+}
+ */

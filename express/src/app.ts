@@ -23,7 +23,7 @@ app.use(
  * Primary app routes.
  */
 app.get("/", homeController.index);
-app.get("/favicons", homeController.index);
+app.get("/favicons", homeController.favicons);
 
 
 /**
