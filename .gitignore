@@ -3,3 +3,4 @@ cardboard-ddns
 dist/
 *.log
 favicons/
+.DS_Store
