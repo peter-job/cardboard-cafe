@@ -17,7 +17,7 @@ export class SslConfig {
         this._ca = fs.readFileSync(EnvironmentConfig.SSL_CERT_PATH + 'chain.pem', 'utf8');
     }
 
-    public GetCredentials(): https.ServerOptions {
+    public get Credentials(): https.ServerOptions {
         return {
             key: this._privateKey,
             cert: this._certificate,

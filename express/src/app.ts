@@ -1,6 +1,6 @@
 import express from "express";
-import bodyParser from "body-parser";
 import path from "path";
+import { HttpRedirect } from "./middleware/http-redirect.middleware";
 
 // Controllers (route handlers)
 import * as homeController from "./controllers/home";
@@ -12,9 +12,7 @@ const app = express();
 // Express configuration
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "ejs");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(HttpRedirect);
 app.use(
     express.static(path.join(__dirname, "public"), { maxAge: 31557600000 })
 );
