@@ -1,3 +1,4 @@
 [submodule "express/src/public/img/favicon-archive"]
 	path = express/src/public/img/favicon-archive
 	url = https://github.com/peter-job/favicon-archive.git
+	branch = master
