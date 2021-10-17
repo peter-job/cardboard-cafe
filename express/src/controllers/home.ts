@@ -1,4 +1,7 @@
 import { Request, Response } from "express";
+import { EnvironmentConfig } from "../config/environment.config";
+import path from "path";
+import { readdirSync } from "fs";
 
 /**
  * Home page.
@@ -15,18 +18,13 @@ export const favicons = (req: Request, res: Response) => {
     res.render("favicons", {
         title: "Favicon Explorer",
         data: {
-                icons: getFavicons()
+            icons: getFavicons()
         }
     });
 };
 
 const getFavicons = () => {
-    const favicons_dir = './src/public/img/favicons';
-    const path = require('path');
-    const fs = require('fs');
-    const favicons = fs.readdirSync(favicons_dir).map(file => ({ ext: path.extname(file), name: path.parse(file).name }));
-    favicons.forEach(file => {
-        console.log(file);
-    });
+    const favicons = readdirSync(EnvironmentConfig.FAVICONS_PATH)
+        .map(file => ({ ext: path.extname(file), name: path.parse(file).name }));
     return favicons;
 }
